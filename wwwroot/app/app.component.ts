@@ -1,20 +1,29 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit }  from '@angular/core';
+import './rxjs-operators';
 
-import { Competition }       from './competition';
+import { CompetitionService } from './competition.service';
+import { Competition }        from './competition';
 
 @Component({
-  selector: 'my-app',
-  templateUrl: 'app/app.template.html'
+  selector:       'my-app',
+  templateUrl:    'app/app.template.html',
+  providers:      [CompetitionService]
 })
-export class AppComponent {
+export class AppComponent implements OnInit {
 
-   competition: Competition;
+    error: string;
+    competition: Competition;
 
-    constructor() {
+    constructor(private service: CompetitionService) {
         this.competition = new Competition("one", "copa", null);
     }
 
     ngOnInit() {
+
+        this.service.getCompetition().subscribe(
+            x => this.competition = x,
+            error => this.error = <any>error
+        );
 
     }
 
