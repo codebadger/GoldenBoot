@@ -1,7 +1,21 @@
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
+
+import { Competition }       from './competition';
 
 @Component({
   selector: 'my-app',
-  template: '<h1>My First Angular 2 App</h1>'
+  templateUrl: 'app/app.template.html'
 })
-export class AppComponent { }
+export class AppComponent {
+
+   competition: Competition;
+
+    constructor() {
+        this.competition = new Competition("one", "copa", null);
+    }
+
+    ngOnInit() {
+
+    }
+
+}
