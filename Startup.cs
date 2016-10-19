@@ -4,6 +4,7 @@ using Microsoft.AspNetCore.Hosting;
 using Microsoft.AspNetCore.Http;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
+using Newtonsoft.Json;
 
 namespace GoldenBoot
 {
@@ -20,10 +21,12 @@ namespace GoldenBoot
 
             Configuration = config;
         }
-              
+
         public void ConfigureServices(IServiceCollection services)
         {
-            services.AddMvc();
+            services.AddMvc().AddJsonOptions(
+                x => x.SerializerSettings.ReferenceLoopHandling = ReferenceLoopHandling.Ignore
+            );
         }
         
         public void Configure(IApplicationBuilder app, IHostingEnvironment env)
