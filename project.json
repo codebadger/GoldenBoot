@@ -2,7 +2,14 @@
   "version": "1.0.0-*",
   "buildOptions": {
     "debugType": "portable",
-    "emitEntryPoint": true
+    "emitEntryPoint": true,
+
+    "copyToOutput": {
+
+      "includeFiles": [ "appsettings.json" ]
+
+    }
+
   },
 
   "dependencies": {
@@ -34,9 +41,11 @@
           "type": "platform",
           "version": "1.0.0"
         },
+        "Microsoft.Extensions.Configuration.FileExtensions": "1.0.0",
+        "Microsoft.Extensions.Configuration.Json":"1.0.0",
+        "Microsoft.AspNetCore.Diagnostics":"1.0.0",
         "Microsoft.AspNetCore.Server.Kestrel": "1.0.0",
-        "Microsoft.AspNetCore.Mvc": "1.0.1",
-        "Microsoft.AspNetCore.Diagnostics":"1.0.0"
+        "Microsoft.AspNetCore.Mvc": "1.0.1"
       },
       "imports": "dnxcore50"
     }

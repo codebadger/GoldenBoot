@@ -9,10 +9,7 @@ namespace GoldenBoot
     {
         protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
         {
-            var builder = new ConfigurationBuilder();
-            var config = builder.Build();
-
-            optionsBuilder.UseSqlServer(config.GetConnectionString("GoldenBoot"));
+            optionsBuilder.UseSqlServer(Startup.Configuration.GetConnectionString("GoldenBoot"));
         }
 
         protected override void OnModelCreating(ModelBuilder modelBuilder)
