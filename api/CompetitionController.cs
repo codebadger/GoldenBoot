@@ -1,4 +1,3 @@
-using System.Linq;
 using Microsoft.AspNetCore.Mvc;
 
 namespace GoldenBoot
@@ -9,16 +8,9 @@ namespace GoldenBoot
         [Route("{id}")]
         public JsonResult GetCompetition(int id)
         {
-            Competition competition;
+            var repository = new CompetitionSqlRepository();
 
-            using (var context = new GoldenBootContext())
-            {
-                competition = context.Competition.First(x => x.Id == id);
-                competition.Players = context.Player.Where(x => x.Competition.Id == id)
-                    .OrderByDescending(x => x.Goals)
-                    .ToList();
-
-            }
+            var competition = repository.Get("copa2016");
 
             var json = Json(new {
                 data = competition
