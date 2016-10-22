@@ -1,3 +1,5 @@
+api/sql-connection.json
+
 bin/
 obj/
 
@@ -9,3 +11,5 @@ wwwroot/app/js/*.js
 wwwroot/app/js/*.map
 
 project.lock.json
+
+

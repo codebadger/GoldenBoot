@@ -6,7 +6,7 @@
 
     "copyToOutput": {
 
-      "includeFiles": [ "appsettings.json" ]
+      "includeFiles": [ "api/sql-connection.json" ]
 
     }
 
