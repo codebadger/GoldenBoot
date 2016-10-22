@@ -11,5 +11,6 @@ wwwroot/app/js/*.js
 wwwroot/app/js/*.map
 
 project.lock.json
+GoldenBoot.nuget.props
 
 
