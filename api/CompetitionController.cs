@@ -5,19 +5,24 @@ namespace GoldenBoot
     [Route("api/[controller]")]
     public class CompetitionController : Controller
     {
-        [Route("{id}")]
-        public JsonResult GetCompetition(int id)
+        private ICompetitionRepository _repository;
+
+        public CompetitionController()
         {
-            var repository = new CompetitionSqlRepository();
+            _repository = new CompetitionSqlRepository();
+        }
 
-            var competition = repository.Get("copa2016");
+        [Route("{code}")]
+        public ActionResult GetCompetition(string code)
+        {
+            var competition = _repository.Get(code);
 
-            var json = Json(new {
-                data = competition
-            });
+            if (competition == null)
+            {
+                return new NotFoundObjectResult(code);
+            }
 
-            return json;
-
+            return Json(competition);
         }
     }
 }

@@ -8,8 +8,10 @@ namespace GoldenBoot
         {
             using (var context = new GoldenBootContext())
             {
-                var competition = context.Competition.First(x => x.Code == code);
+                var competition = context.Competition.FirstOrDefault(x => x.Code == code);
                 
+                if (competition == null) return competition;
+
                 competition.Players = context.Player.Where(x => x.Competition.Code == code)
                     .OrderByDescending(x => x.Goals)
                     .ToList();

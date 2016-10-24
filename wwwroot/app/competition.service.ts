@@ -12,7 +12,7 @@ export class CompetitionService {
 
     getCompetition(): Observable<Competition> {
 
-        var results = this.http.get('api/competition/2')
+        var results = this.http.get('api/competition/copa2016')
             .map(this.extractData)
             .catch(this.handleError);
 
@@ -22,7 +22,7 @@ export class CompetitionService {
     private extractData(res: Response) {
 
         let body = res.json();
-        return body.data || { };        
+        return body || { };        
 
     }
 
