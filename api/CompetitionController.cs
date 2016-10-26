@@ -7,9 +7,9 @@ namespace GoldenBoot
     {
         private ICompetitionRepository _repository;
 
-        public CompetitionController()
+        public CompetitionController(ICompetitionRepository repository)
         {
-            _repository = new CompetitionSqlRepository();
+            _repository = repository;
         }
 
         [Route("{code}")]

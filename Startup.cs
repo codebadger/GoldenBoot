@@ -22,9 +22,13 @@ namespace GoldenBoot
 
         public void ConfigureServices(IServiceCollection services)
         {
+            // Frameworks
             services.AddMvc().AddJsonOptions(
                 x => x.SerializerSettings.ReferenceLoopHandling = ReferenceLoopHandling.Ignore
             );
+
+            // GoldenBoot Api Services
+            services.AddTransient<ICompetitionRepository, CompetitionSqlRepository>();
         }
         
         public void Configure(IApplicationBuilder app, IHostingEnvironment env)

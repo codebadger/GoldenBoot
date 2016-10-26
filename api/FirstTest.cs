@@ -1,3 +1,4 @@
+using Moq;
 using Xunit;
 
 namespace GoldenBoot
@@ -11,9 +12,15 @@ namespace GoldenBoot
         }
 
         [Fact]
-        public void FalseIsTrue()
+        public void MoqIsWorking()
         {
-            Assert.True(false);
+            var mock = new Mock<ICompetitionRepository>();
+
+            mock.Setup(x => x.Get("copa2016")).Returns(new Competition());
+
+            var result = mock.Object.Get("copa2016");
+
+            mock.Verify(x => x.Get("copa2016"), Times.Once);
         }
 
     }
