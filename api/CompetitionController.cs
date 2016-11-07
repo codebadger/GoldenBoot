@@ -20,7 +20,8 @@ namespace GoldenBoot
 
             if (competition == null)
             {
-                return new NotFoundObjectResult(code);
+                var error = $"Could not find competition with code: {code}";
+                return new NotFoundObjectResult(error);
             }
 
             return Json(competition);
