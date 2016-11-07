@@ -29,6 +29,9 @@ namespace GoldenBoot
 
             // GoldenBoot Api Services
             services.AddTransient<ICompetitionRepository, CompetitionSqlRepository>();
+
+            // Swagger
+            services.AddSwaggerGen();
         }
         
         public void Configure(IApplicationBuilder app, IHostingEnvironment env)
@@ -37,6 +40,9 @@ namespace GoldenBoot
             app.UseDefaultFiles();
             app.UseStaticFiles();
             app.UseMvc();
+
+            app.UseSwagger();
+            app.UseSwaggerUi();
         }
     }
 }

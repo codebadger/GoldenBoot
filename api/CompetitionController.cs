@@ -12,6 +12,7 @@ namespace GoldenBoot
             _repository = repository;
         }
 
+        [HttpGet]
         [Route("{code}")]
         public ActionResult GetCompetition(string code)
         {

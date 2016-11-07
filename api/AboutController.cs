@@ -4,6 +4,7 @@ namespace GoldenBoot
 {
     public class AboutController : Controller
     {   
+        [HttpGet]
         [Route("api/about")]
         public JsonResult Index()
         {
