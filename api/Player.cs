@@ -1,7 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-
-namespace GoldenBoot
+﻿namespace GoldenBoot
 {
     public partial class Player
     {
