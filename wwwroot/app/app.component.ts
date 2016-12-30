@@ -3,6 +3,7 @@ import './rxjs-operators';
 
 import { CompetitionService } from './competition.service';
 import { Competition }        from './competition';
+import { RouterModule, Routes } from '@angular/router';
 
 @Component({
   selector:       'my-app',

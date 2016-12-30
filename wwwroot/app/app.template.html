@@ -1,24 +1,8 @@
 <h1>{{competition.name}}</h1>
 <p class="lead">Top goal scorers for the {{competition.name}}</p>
 
-<table class="table table-striped">
+<router-outlet></router-outlet>
 
-    <thead>
-        <tr>
-            <th>Player</th>
-            <th>Country</th>
-            <th>Club</th>
-            <th>Goals</th>
-        </tr>
-    </thead>
+<br><br>
 
-    <tbody>
-        <tr *ngFor="let player of competition.players">
-            <th>{{player.name}}</th>
-            <td>{{player.country}}</td>
-            <td>{{player.club}}</td>
-            <td>{{player.goals}}</td>
-        </tr>
-    </tbody>
-
-</table>
+<a routerLink="/crisis-center">Crisis Center</a>
