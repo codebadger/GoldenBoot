@@ -8,7 +8,8 @@
     "emitEntryPoint": true,
     "copyToOutput": {
       "includeFiles": [ "api/sql-connection.json" ]
-    }
+    },
+    "preserveCompilationContext": true
 
   },
 
@@ -36,7 +37,7 @@
         "portable-net45+win8"
       ]
     },
-    "Microsoft.DotNet.Watcher.Tools": "1.0.0-preview2-final"
+    "Microsoft.DotNet.Watcher.Tools": "1.1.0-preview4-final"
 
   },
 
