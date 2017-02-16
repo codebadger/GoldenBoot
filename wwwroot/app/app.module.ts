@@ -4,18 +4,20 @@ import { HttpModule, JsonpModule } from '@angular/http';
 import { RouterModule, Routes } from '@angular/router';
 
 import { AppComponent }  from './app.component';
+import { CompetitionComponent } from './competition.component';
 import { HeroDetailComponent } from './herodetail.component';
 import { CrisisListComponent } from './crisis.component';
 
 const appRoutes: Routes = [
-  { path: '', component: HeroDetailComponent },
+  { path: '', component: CompetitionComponent },
   { path: 'hero', component: HeroDetailComponent },
-  { path: 'crisis-center', component: CrisisListComponent }
+  { path: 'crisis-center', component: CrisisListComponent },
+  { path: 'competition', component: CompetitionComponent }
 ];
 
 @NgModule({
   imports:      [ BrowserModule, HttpModule, JsonpModule, RouterModule.forRoot(appRoutes) ],
-  declarations: [ AppComponent, HeroDetailComponent, CrisisListComponent ],
+  declarations: [ AppComponent, HeroDetailComponent, CrisisListComponent, CompetitionComponent ],
   bootstrap:    [ AppComponent ]
 })
 

@@ -12,7 +12,7 @@ export class CompetitionService {
 
     getCompetition(): Observable<Competition> {
 
-        var results = this.http.get('api/competition/copa2016')
+        var results = this.http.get('api/competition/copa-2016')
             .map(this.extractData)
             .catch(this.handleError);
 
