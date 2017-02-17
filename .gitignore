@@ -7,8 +7,8 @@ wwwroot/bower_components
 wwwroot/node_modules/
 wwwroot/typings
 
-wwwroot/app/js/*.js
-wwwroot/app/js/*.map
+wwwroot/app/**/*.js
+wwwroot/app/**/*.map
 
 project.lock.json
 GoldenBoot.nuget.props

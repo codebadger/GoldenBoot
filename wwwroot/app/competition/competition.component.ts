@@ -1,14 +1,13 @@
 import { Component, OnInit }  from '@angular/core';
-import './rxjs-operators';
 
 import { CompetitionService } from './competition.service';
 import { Competition } from './competition';
 import { RouterModule, Routes, ActivatedRoute } from '@angular/router';
 
-import './rxjs-operators';
+import '../rxjs-operators';
 
 @Component({
-  templateUrl:    'app/competition.template.html',
+  templateUrl: 'app/competition/competition.template.html',
   providers: [CompetitionService]
 })
 export class CompetitionComponent implements OnInit {

@@ -1,18 +1,17 @@
 import { Injectable }       from '@angular/core';
 import { Http, Response }   from '@angular/http';
-
 import { Observable }       from 'rxjs/Observable';
 
-import { Competition }      from './competition';
+import { About }      from './about';
 
 @Injectable()
-export class CompetitionService {
+export class AboutService {
 
     constructor (private http: Http) {}
 
-    getCompetition(id: string): Observable<Competition> {
+    getAbout(): Observable<About> {
 
-        var results = this.http.get(`api/competition/${ id }`)
+        var results = this.http.get('api/about')
             .map(this.extractData)
             .catch(this.handleError);
 
