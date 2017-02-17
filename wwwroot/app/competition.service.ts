@@ -10,9 +10,9 @@ export class CompetitionService {
 
     constructor (private http: Http) {}
 
-    getCompetition(): Observable<Competition> {
+    getCompetition(id: string): Observable<Competition> {
 
-        var results = this.http.get('api/competition/copa-2016')
+        var results = this.http.get(`api/competition/${ id }`)
             .map(this.extractData)
             .catch(this.handleError);
 

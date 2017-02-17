@@ -2,8 +2,8 @@ import { Component, OnInit }  from '@angular/core';
 import './rxjs-operators';
 
 import { CompetitionService } from './competition.service';
-import { Competition }        from './competition';
-import { RouterModule, Routes } from '@angular/router';
+import { Competition } from './competition';
+import { RouterModule, Routes, ActivatedRoute } from '@angular/router';
 
 import './rxjs-operators';
 
@@ -16,16 +16,24 @@ export class CompetitionComponent implements OnInit {
     error: string;
     competition: Competition;
 
-    constructor(private service: CompetitionService) {
+    constructor(private service: CompetitionService, private route: ActivatedRoute) {
         this.competition = new Competition("one", "copa", null);
     }
 
     ngOnInit() {
 
-        this.service.getCompetition().subscribe(
-            x => this.competition = x,
-            error => this.error = <any>error
-        );
+        this.route.params
+            .map(x => x['id'])
+            .subscribe((id) => {
+
+                if (!id) { id = "copa-2016" };
+                
+                this.service.getCompetition(id).subscribe(
+                    x => this.competition = x,
+                    error => this.error = <any>error
+                );
+
+        })
 
     }
 

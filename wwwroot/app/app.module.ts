@@ -12,7 +12,8 @@ const appRoutes: Routes = [
   { path: '', component: CompetitionComponent },
   { path: 'hero', component: HeroDetailComponent },
   { path: 'crisis-center', component: CrisisListComponent },
-  { path: 'competition', component: CompetitionComponent }
+  { path: 'competition', component: CompetitionComponent },
+  { path: 'competition/:id', component: CompetitionComponent }
 ];
 
 @NgModule({
