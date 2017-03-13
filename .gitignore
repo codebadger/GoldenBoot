@@ -1,3 +1,5 @@
+**/.vs/
+
 api/sql-connection.json
 
 bin/
@@ -12,5 +14,3 @@ wwwroot/app/**/*.map
 
 project.lock.json
 GoldenBoot.nuget.props
-
-

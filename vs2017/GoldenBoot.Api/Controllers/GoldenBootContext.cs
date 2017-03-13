@@ -9,7 +9,7 @@ namespace GoldenBoot.Api
     {
         protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
         {
-            optionsBuilder.UseSqlServer(Startup.Configuration.GetConnectionString("GoldenBoot"));
+            // optionsBuilder.UseSqlServer(Startup.Configuration.GetConnectionString("GoldenBoot"));
         }
 
         protected override void OnModelCreating(ModelBuilder modelBuilder)
