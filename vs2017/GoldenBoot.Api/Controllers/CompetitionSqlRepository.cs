@@ -4,20 +4,24 @@ namespace GoldenBoot.Api
 {
     public class CompetitionSqlRepository : ICompetitionRepository
     {
+        private readonly GoldenBootContext _context;
+
+        public CompetitionSqlRepository(GoldenBootContext context)
+        {
+            _context = context;
+        }
+
         public Competition Get(string code)
         {
-            using (var context = new GoldenBootContext())
-            {
-                var competition = context.Competition.FirstOrDefault(x => x.Code == code);
+            var competition = _context.Competition.FirstOrDefault(x => x.Code == code);
                 
-                if (competition == null) return competition;
+            if (competition == null) return competition;
 
-                competition.Players = context.Player.Where(x => x.Competition.Code == code)
-                    .OrderByDescending(x => x.Goals)
-                    .ToList();
+            competition.Players = _context.Player.Where(x => x.Competition.Code == code)
+                .OrderByDescending(x => x.Goals)
+                .ToList();
                 
-                return competition;
-            }
+            return competition;
         }
     }
 

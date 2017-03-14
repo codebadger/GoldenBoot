@@ -7,9 +7,8 @@ namespace GoldenBoot.Api
 {
     public partial class GoldenBootContext : DbContext
     {
-        protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
+        public GoldenBootContext(DbContextOptions<GoldenBootContext> options) : base(options)
         {
-            // optionsBuilder.UseSqlServer(Startup.Configuration.GetConnectionString("GoldenBoot"));
         }
 
         protected override void OnModelCreating(ModelBuilder modelBuilder)
