@@ -6,6 +6,8 @@ using Microsoft.Extensions.Logging;
 using Microsoft.EntityFrameworkCore;
 using Newtonsoft.Json;
 using Swashbuckle.AspNetCore.Swagger;
+using Microsoft.AspNetCore.Mvc;
+using Microsoft.AspNetCore.Mvc.Cors.Internal;
 
 namespace GoldenBoot.Api
 {
@@ -26,6 +28,16 @@ namespace GoldenBoot.Api
         // This method gets called by the runtime. Use this method to add services to the container.
         public void ConfigureServices(IServiceCollection services)
         {
+            // Cross-origin policy
+            services.AddCors(options =>
+            {
+                options.AddPolicy("CorsPolicy",
+                    builder => builder.AllowAnyOrigin()
+                    .AllowAnyMethod()
+                    .AllowAnyHeader()
+                    .AllowCredentials());
+            });
+
             // Frameworks
             services.AddMvc().AddJsonOptions(
                 x => x.SerializerSettings.ReferenceLoopHandling = ReferenceLoopHandling.Ignore
@@ -53,6 +65,7 @@ namespace GoldenBoot.Api
             loggerFactory.AddConsole(Configuration.GetSection("Logging"));
             loggerFactory.AddDebug();
 
+            app.UseCors("CorsPolicy");
             app.UseMvc();
 
             app.UseSwagger();
