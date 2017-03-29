@@ -1,9 +1,9 @@
-**/.vs/
+services/.vs/
 
 api/sql-connection.json
 
-bin/
-obj/
+**/bin/
+**/obj/
 
 wwwroot/bower_components
 wwwroot/node_modules/
