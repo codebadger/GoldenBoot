@@ -1,9 +1,9 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio 15
-VisualStudioVersion = 15.0.26228.4
+VisualStudioVersion = 15.0.27130.2020
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "GoldenBoot.Api", "GoldenBoot.Api\GoldenBoot.Api.csproj", "{D529D3C4-32CF-4B9D-95E1-8E6FF51BF910}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "GoldenBoot.Api", "GoldenBoot.Api\GoldenBoot.Api.csproj", "{7BD3D66F-F547-43CF-85BE-037A17F17509}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -11,12 +11,15 @@ Global
 		Release|Any CPU = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(ProjectConfigurationPlatforms) = postSolution
-		{D529D3C4-32CF-4B9D-95E1-8E6FF51BF910}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{D529D3C4-32CF-4B9D-95E1-8E6FF51BF910}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{D529D3C4-32CF-4B9D-95E1-8E6FF51BF910}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{D529D3C4-32CF-4B9D-95E1-8E6FF51BF910}.Release|Any CPU.Build.0 = Release|Any CPU
+		{7BD3D66F-F547-43CF-85BE-037A17F17509}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{7BD3D66F-F547-43CF-85BE-037A17F17509}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{7BD3D66F-F547-43CF-85BE-037A17F17509}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{7BD3D66F-F547-43CF-85BE-037A17F17509}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {69302BFB-9B63-49D9-B85A-E176B4C6CAA0}
 	EndGlobalSection
 EndGlobal

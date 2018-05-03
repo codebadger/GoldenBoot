@@ -1,4 +1,7 @@
-﻿namespace GoldenBoot.Api
+﻿using System;
+using System.Collections.Generic;
+
+namespace GoldenBoot.Api.Models
 {
     public partial class Player
     {
@@ -9,6 +12,6 @@
         public string Club { get; set; }
         public int Goals { get; set; }
 
-        public virtual Competition Competition { get; set; }
+        public Competition Competition { get; set; }
     }
 }

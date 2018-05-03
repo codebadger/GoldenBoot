@@ -1,3 +1,4 @@
+using GoldenBoot.Api.Models;
 using System.Linq;
 
 namespace GoldenBoot.Api

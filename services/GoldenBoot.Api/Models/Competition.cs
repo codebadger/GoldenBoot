@@ -1,6 +1,7 @@
-﻿using System.Collections.Generic;
+﻿using System;
+using System.Collections.Generic;
 
-namespace GoldenBoot.Api
+namespace GoldenBoot.Api.Models
 {
     public partial class Competition
     {
@@ -13,8 +14,8 @@ namespace GoldenBoot.Api
         public string Code { get; set; }
         public string Name { get; set; }
 
-        public virtual ICollection<Player> Players { get; set; }
-        public virtual Competition IdNavigation { get; set; }
-        public virtual Competition InverseIdNavigation { get; set; }
+        public Competition IdNavigation { get; set; }
+        public Competition InverseIdNavigation { get; set; }
+        public ICollection<Player> Players { get; set; }
     }
 }
